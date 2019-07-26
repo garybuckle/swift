@@ -15,19 +15,25 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-    var game: Memory
+    var game: Memory!
     
-    /// Array of cards in the UI
-    @IBOutlet weak var cardButtons: UIButton!
+    @IBOutlet  var cardButtons: [UIButton]!
     
+    @IBAction func touchCard(_ sender: UIButton) {
+        print("Card touched")
+    }
     
+
+
+
+
     func flipCard() {
         // Flip the selected card
         print("Card Flipped")
     }
     
     func initialSetUp() {
-        game = Memory(numberOfPairsOfCards: (Card))
+        game = Memory(numberOfPairsOfCards: (cardButtons.count))
     }
     
 }
