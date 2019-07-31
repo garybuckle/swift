@@ -10,8 +10,14 @@
 
 import Foundation
 
-struct Card {
+struct Card: Hashable {
     
+// Conform to hashable
+    var hashValue : Int {return identifier}
+    /// To conform to `Equatable` protocol inherited form `Hashable`
+    static func ==(lhs: Card, rhs: Card) -> Bool {
+        return lhs.identifier == rhs.identifier
+    }
 // Is the current card facing up?
 var isFaceUp = false
 

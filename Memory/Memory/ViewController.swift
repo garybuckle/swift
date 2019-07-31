@@ -15,12 +15,15 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-    var game: Memory!
+    private var game: Memory!
     
     @IBOutlet  var cardButtons: [UIButton]!
     
     @IBAction func touchCard(_ sender: UIButton) {
         print("Card touched")
+        if let cardNumber = cardButtons.firstIndex(of: sender) {
+            print(cardNumber)
+        }
     }
     
 
@@ -35,6 +38,11 @@ class ViewController: UIViewController {
     func initialSetUp() {
         game = Memory(numberOfPairsOfCards: (cardButtons.count))
     }
+    
+    
+    //Each card/button will have a corresponding emoji
+    // Set up an array of emojis
+    private var emoji = [Card : String]()
     
 }
 

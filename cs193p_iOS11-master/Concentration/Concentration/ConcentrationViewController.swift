@@ -181,7 +181,7 @@ class ConcentrationViewController: UIViewController {
     } 
     
     ///
-    /// Each card/button will have a corresponding emoji
+        /// Each card/button will have a corresponding emoji
     ///
     private var emoji = [Card: String]()
  
