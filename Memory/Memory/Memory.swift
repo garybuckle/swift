@@ -11,9 +11,15 @@ import Foundation
 class Memory {
     // Create an array of Cards
     var cards = [Card]()
-
-
-/// Build a Concentration game based on the given number of card-pairs
+    // One card might be facing up
+    var indexOfOneAndOnlyFaceUpCard: Int?
+    // flipcount
+    var flipCount = 0
+    // Keep the score
+    var score : Int = 0
+    
+    
+    /// Set up the numbers of pairs array
     init (numberOfPairsOfCards:Int) {
         for _ in 1...numberOfPairsOfCards {
             let card = Card()
@@ -23,61 +29,42 @@ class Memory {
         }
         
         //Shuffle the cards
-        cards.shuffle()
-    }
-    
-/// Keep track of which cards have been seen, for instance, to
-/// penalize the player if they mismatch cards already seen.
-    private var seenCards: Set<Int> = []    
-    
-/// Whether or not we have ONLY one card face-up
-var indexOfOneAndOnlyFaceUpCard:Int?
-
-
-/// Track the number of flips the user has done
-var flipCount = 0
-
-/// Keep track of the game's score
-var score = 0
-
-/// Handle what to do when a card is chosen
-
-func cardChosen(at index:Int)  {
-    // If chosen card is already matched, ignore it (return)
-    if cards[index].isMatched {
-        return
+        //cards.shuffle()
     }
     
     
-    // Increment flipCount
-    flipCount += 1
-
-    // If we have a card facing up already, check if it matches the chosen one
-    if let matchIndex = indexOfOneAndOnlyFaceUpCard, matchIndex != index {
-        // If they match, mark them as matched
-
+    /// Handle what to do when a card is chosen Note - card index points to the current card
+    
+    func chooseCard(at index:Int)  {
+        // No cards match but increase flipcount
         
+        print("Card \(cards[index]) chosen")
+        //flipCount += 1
+        // If chosen card is already matched, is it the current card?
+        if cards[index].isMatched {
+            // matchIndex is set if its the same as oneandonly and its the current card
+            if let matchIndex = indexOfOneAndOnlyFaceUpCard, matchIndex != index {
+                //do the identifiers match
+                if cards[matchIndex].identifier == cards[index].identifier {
+                    //identifiers match so set the card properties accordingly
+                    cards[matchIndex].isMatched = true
+                    cards[index].isMatched = true
+                }
+                //flip this card
+                cards[index].isFaceUp = true
+                //reset the index of one and only
+                indexOfOneAndOnlyFaceUpCard = nil
+            } else {
+                // either no cards are face up or two cards are face up so turn them over
+                for flipIndex in cards.indices {
+                    cards[flipIndex].isFaceUp = false
+                }
+                // Turn the chose card up
+                cards[index].isFaceUp = true
+                // set one and only index  to this card
+                indexOfOneAndOnlyFaceUpCard = index
+            }
+        }
     }
-
-
-    // Increase the score
-
-    // Chosen pair of cards didn't match
-
-    // Penalize 1 point for every previously seen card that is involved in a mismatch.
-
-    // Penalize 1 point for every previously seen card that is involved in a mismatch.
-
-    
-    // Both cards have been seen by now
-
-    
-    // We don't have oneAndOnly cards up
-
-    
-    // Either two cards or no cards are face up
-
-    // We now have only 1 card face-up
-
 }
-}
+
