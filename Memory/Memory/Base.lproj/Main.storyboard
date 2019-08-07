@@ -206,6 +206,7 @@
                             <constraint firstItem="uBB-A7-LsZ" firstAttribute="leading" secondItem="Idj-Iz-NRi" secondAttribute="leading" id="eE7-xy-9x0"/>
                             <constraint firstItem="Idj-Iz-NRi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="36" id="gNK-1V-GS9"/>
                             <constraint firstItem="Idj-Iz-NRi" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="nTF-Qm-mfP"/>
+                            <constraint firstItem="uBB-A7-LsZ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="dcv-Yh-Jce" secondAttribute="bottom" constant="8" symbolic="YES" id="unb-rR-UtO"/>
                             <constraint firstItem="dcv-Yh-Jce" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ylg-QP-aAb"/>
                             <constraint firstItem="Idj-Iz-NRi" firstAttribute="top" secondItem="uBB-A7-LsZ" secondAttribute="bottom" constant="14" id="z5M-pY-yhN"/>
                         </constraints>
