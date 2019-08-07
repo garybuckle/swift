@@ -27,6 +27,7 @@ class Memory {
             cards.append(card)
             cards.append(card)
         }
+        cards.shuffle()
         
         //Shuffle the cards
         //cards.shuffle()
@@ -38,11 +39,11 @@ class Memory {
     func chooseCard(at index:Int)  {
         // No cards match but increase flipcount
         
-        print("Card \(cards[index]) chosen")
+        print("Card \(cards[index].identifier) chosen")
         //flipCount += 1
-        // If chosen card is already matched, is it the current card?
-        if cards[index].isMatched {
-            // matchIndex is set if its the same as oneandonly and its the current card
+        // If chosen card is not matched
+        if !cards[index].isMatched {
+            // matchIndex is set if its the same as oneandonly and its not the current card
             if let matchIndex = indexOfOneAndOnlyFaceUpCard, matchIndex != index {
                 //do the identifiers match
                 if cards[matchIndex].identifier == cards[index].identifier {

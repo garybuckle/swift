@@ -38,9 +38,8 @@ class ViewController: UIViewController {
         if let cardNumber = cardButtons.firstIndex(of: sender) {
             //Choose the card at cardNumber
             game.chooseCard(at: cardNumber)
-            // Set up the emojis on the cards
+//             Set up the emojis on the cards
             updateViewFromModel()
-            //flipCard()
             
         } else {
             print("Card not found!!!")
@@ -49,6 +48,8 @@ class ViewController: UIViewController {
     
     @IBAction func newGame(_ sender: Any) {
         print("New Game")
+        initialSetUp()
+        updateViewFromModel()
     }
     
 
@@ -91,15 +92,7 @@ class ViewController: UIViewController {
             }
         }
     }
-    
-    func flipCard()  {
-        for index in cardButtons.indices {
-            let button = cardButtons[index]
-            let card = game.cards[index]
-            button.setTitle(emoji(for:card), for: UIControl.State.normal)
-        }
 
-    }
     
     
     //Each card/button will have a corresponding emoji
