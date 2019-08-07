@@ -72,14 +72,13 @@ class ViewController: UIViewController {
     func initialSetUp() {
         // How many cards do we have?
         game = Memory(numberOfPairsOfCards: numberOfPairsOfCards)
-        print("Game created with \(numberOfPairsOfCards) pairs of cards")
+       // Reset flips
+        flipCount = 0
         
     }
     
     func updateViewFromModel()  {
         // For each button in the array
-        print("Emojis done")
-
         for index in cardButtons.indices {
             // assign a button and a card to each element in the button array
             let button = cardButtons[index]
