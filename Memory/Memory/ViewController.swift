@@ -4,7 +4,7 @@
 //
 //  Created by Gary Buckle on 26/07/2019.
 //  Copyright © 2019 Gary Buckle. All rights reserved.
-//
+//  Lercture 3 UI compliant
 
 import UIKit
 
