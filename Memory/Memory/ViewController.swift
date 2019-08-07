@@ -22,6 +22,14 @@ class ViewController: UIViewController {
         return (cardButtons.count + 1) / 2
     }
     
+    @IBOutlet weak var flipCountLabel: UILabel!
+    
+    public var  flipCount:Int = 0 {
+        didSet {
+            flipCountLabel.text = "Flips: \(flipCount)"
+        }
+    }
+    
     // Set up UI
     // Set up the array of card buttons
     @IBOutlet  var cardButtons: [UIButton]!
@@ -29,12 +37,14 @@ class ViewController: UIViewController {
     
 
     
-    @IBOutlet var flipCountLabel: UILabel!
+ 
+    
+    
+    
     //Action to handle when a card is touched
-    
-    
-    
     @IBAction func touchCard(_ sender: UIButton) {
+        flipCount += 1
+        print("Card Flipped")
         if let cardNumber = cardButtons.firstIndex(of: sender) {
             //Choose the card at cardNumber
             game.chooseCard(at: cardNumber)
@@ -55,13 +65,7 @@ class ViewController: UIViewController {
 
     
     //init and count flips
-    var flipCount  = 0 {
-        didSet {
-            flipCountLabel.text = "Flips:\(flipCount)"
-            print("Flipcount \(flipCount)")
-            flipCount += 1
-        }
-    }
+   
     
     
     

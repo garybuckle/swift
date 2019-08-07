@@ -14,7 +14,7 @@ class Memory {
     // One card might be facing up
     var indexOfOneAndOnlyFaceUpCard: Int?
     // flipcount
-    var flipCount = 0
+//    var flipCount = 0
     // Keep the score
     var score : Int = 0
     
@@ -33,6 +33,8 @@ class Memory {
         //cards.shuffle()
     }
     
+   
+    
     
     /// Handle what to do when a card is chosen Note - card index points to the current card
     
@@ -40,7 +42,7 @@ class Memory {
         // No cards match but increase flipcount
         
         print("Card \(cards[index].identifier) chosen")
-        //flipCount += 1
+//        flipCount += 1
         // If chosen card is not matched
         if !cards[index].isMatched {
             // matchIndex is set if its the same as oneandonly and its not the current card
