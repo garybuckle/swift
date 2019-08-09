@@ -12,7 +12,34 @@ class Memory {
     // Create an array of Cards
     var cards = [Card]()
     // One card might be facing up
-    var indexOfOneAndOnlyFaceUpCard: Int?
+    var indexOfOneAndOnlyFaceUpCard: Int? {
+        get  {
+            // scan all cards to see which one is facing up, return it or nill
+            var foundIndex : Int?
+            for index in cards.indices {
+                if cards[index].isFaceUp {
+                    if foundIndex == nil {
+                        foundIndex = index
+                    } else {
+                        return nil
+                    }
+                }
+            }
+            return foundIndex
+            
+        }
+        
+        set {
+            // Turn all other cards face down except the card at cards.newValue
+            for index in cards.indices {
+                // all cards faceUp unless the card is the newValue that will automatically get passed to the set function
+                cards[index].isFaceUp = (index == newValue)
+            }
+        }
+    }
+    
+    
+    
     // flipcount
 //    var flipCount = 0
     // Keep the score
@@ -56,14 +83,9 @@ class Memory {
                 //flip this card
                 cards[index].isFaceUp = true
                 //reset the index of one and only
-                indexOfOneAndOnlyFaceUpCard = nil
+//                indexOfOneAndOnlyFaceUpCard = nil
             } else {
-                // either no cards are face up or two cards are face up so turn them over
-                for flipIndex in cards.indices {
-                    cards[flipIndex].isFaceUp = false
-                }
-                // Turn the chose card up
-                cards[index].isFaceUp = true
+               
                 // set one and only index  to this card
                 indexOfOneAndOnlyFaceUpCard = index
             }
