@@ -22,7 +22,6 @@ class ViewController: UIViewController {
         return (cardButtons.count + 1) / 2
     }
     
-    @IBOutlet weak var flipCountLabel: UILabel!
     
     public var  flipCount:Int = 0 {
         didSet {
@@ -33,16 +32,12 @@ class ViewController: UIViewController {
     // Set up UI
     // Set up the array of card buttons
     @IBOutlet  var cardButtons: [UIButton]!
-    // Flip Count Label
-    
 
-    
- 
-    
-    
-    
+    // Flip Count Label
+    @IBOutlet private weak var flipCountLabel: UILabel!
+
     //Action to handle when a card is touched
-    @IBAction func touchCard(_ sender: UIButton) {
+    @IBAction private func touchCard(_ sender: UIButton) {
         flipCount += 1
         print("Card Flipped")
         if let cardNumber = cardButtons.firstIndex(of: sender) {
@@ -56,7 +51,7 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func newGame(_ sender: Any) {
+    @IBAction private func newGame(_ sender: Any) {
         print("New Game")
         initialSetUp()
         updateViewFromModel()
@@ -69,7 +64,7 @@ class ViewController: UIViewController {
     
     
     
-    func initialSetUp() {
+   private func initialSetUp() {
         // How many cards do we have?
         game = Memory(numberOfPairsOfCards: numberOfPairsOfCards)
        // Reset flips
@@ -100,14 +95,15 @@ class ViewController: UIViewController {
     
     //Each card/button will have a corresponding emoji
     // Set up an array of emojis
-   var emojiChoices = ["👻","🍅","💀","🎃","🤡","🦹🏼‍♂️","🤖","👽","😻","👿","🤠","👺","🤠","😈","🤢","🤧"]
+   private var emojiChoices = ["👻","🍅","💀","🎃","🤡","🦹🏼‍♂️","🤖","👽","👿","👺","🤠","😈"]
+    
     //Boom! set up an array of emojis
-    var emoji = [Int : String]()
+    private var emoji = [Int : String]()
     
     
     // Put the emoji on the card
     
-    func emoji(for card:Card) -> String {
+    private func emoji(for card:Card) -> String {
         // Takes a Card and returns an emoji
         // Check the ere is not an emoji already assigned and there are still emojis in the array
         if emoji[card.identifier] == nil, emojiChoices.count > 0 {
@@ -118,6 +114,8 @@ class ViewController: UIViewController {
         //return the given emoji or ? if not found
         return emoji[card.identifier] ?? "?"
     }
+    
+   
     
     
 }

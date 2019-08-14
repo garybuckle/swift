@@ -14,6 +14,7 @@
 		2D39AA5622EAEFB000EEEE4F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D39AA5422EAEFB000EEEE4F /* LaunchScreen.storyboard */; };
 		2D39AA5E22EAF32E00EEEE4F /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D39AA5D22EAF32E00EEEE4F /* Card.swift */; };
 		2D39AA6022EB0EAD00EEEE4F /* Memory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D39AA5F22EB0EAD00EEEE4F /* Memory.swift */; };
+		2DF14B9B2302A44D0058D9A0 /* Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF14B9A2302A44D0058D9A0 /* Themes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		2D39AA5722EAEFB000EEEE4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2D39AA5D22EAF32E00EEEE4F /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		2D39AA5F22EB0EAD00EEEE4F /* Memory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memory.swift; sourceTree = "<group>"; };
+		2DF14B9A2302A44D0058D9A0 /* Themes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Themes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +44,7 @@
 		2D39AA3F22EAEFB000EEEE4F = {
 			isa = PBXGroup;
 			children = (
+				2DF14B9A2302A44D0058D9A0 /* Themes.swift */,
 				2D39AA4A22EAEFB000EEEE4F /* Memory */,
 				2D39AA4922EAEFB000EEEE4F /* Products */,
 			);
@@ -144,6 +147,7 @@
 				2D39AA6022EB0EAD00EEEE4F /* Memory.swift in Sources */,
 				2D39AA4E22EAEFB000EEEE4F /* ViewController.swift in Sources */,
 				2D39AA5E22EAF32E00EEEE4F /* Card.swift in Sources */,
+				2DF14B9B2302A44D0058D9A0 /* Themes.swift in Sources */,
 				2D39AA4C22EAEFB000EEEE4F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
