@@ -12,7 +12,7 @@ class Memory {
     // Create an array of Cards
     var cards = [Card]()
     // One card might be facing up
-    var indexOfOneAndOnlyFaceUpCard: Int? {
+    private var indexOfOneAndOnlyFaceUpCard: Int? {
         get  {
             // scan all cards to see which one is facing up, return it or nill
             var foundIndex : Int?
